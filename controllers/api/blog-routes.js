@@ -27,6 +27,38 @@ router.get('/', (req, res)=>{
     });
 });
 
+// get 1 blog
+router.get('/:id', (req, res) => {
+    Blog.findOne({
+        where: {
+            id: req.params.id
+        },
+        attributes: [
+            'id',
+            'title',
+            'article',
+            'created_at'
+        ],
+        include: [
+            {
+                model: User,
+                attributes: ['username']
+            }
+        ]
+    })
+    .then(dbBlogData => {
+        if (!dbBlogData){
+            res.status(404).json({message: 'No blog found with this id'});
+            return;
+        }
+        res.json(dbBlogData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
 
 // add a blog
 router.post('/', (req, res)=>{
