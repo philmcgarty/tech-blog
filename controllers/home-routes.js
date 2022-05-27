@@ -5,6 +5,7 @@ const { User, Blog, Comment } = require('../models');
 
 // main page (homepage)
 router.get('/', (req, res) => {
+    console.log(req.session);
     Blog.findAll({
         attributes: [
             'id',
@@ -40,6 +41,10 @@ router.get('/', (req, res) => {
 
 // login screen
 router.get('/login', (req, res) => {
+    if(req.session.loggedIn){
+        res.redirect('/');
+        return;
+    }
     res.render('login');
 });
 
