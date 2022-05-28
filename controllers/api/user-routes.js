@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User, Blog, Comment } = require('../../models');
-const withAuth = require('../utils/auth');
+//const withAuth = require('../../utils/auth');
 
 // get all
 router.get('/', (req, res) => {
@@ -116,7 +116,7 @@ router.post('/logout', (req, res) => {
 
 
 // delete user
-router.delete('/:id', withAuth, (req, res) => {
+router.delete('/:id', (req, res) => {
   User.destroy({
     where: {
       id: req.params.id
