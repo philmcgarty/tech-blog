@@ -1,4 +1,4 @@
-<section>
+{{!-- <section>
   <h2>Create New Blog</h2>
 
   <form class="new-blog-form">
@@ -7,16 +7,20 @@
       <input type="text" id="blog-title" name="blog-title" />
     </div>
     <div>
-      <label for="blog-article">Link</label>
+      <label for="blog-article">Content</label>
       <input id="blog-article" name="blog-article" />
     </div>
     <button type="submit" class="btn">Create</button>
   </form>
-</section>
+</section> --}}
+
+<div>
+  <a href="/new-blog" class="card-header">+ New Post</a>
+</div>
 
 {{#if blogs.length}}
 <section>
-  <h2>Your Blogs</h2>
+  <h2 class="blog-title">Your Blogs</h2>
   <ol>
     {{#each blogs as |blog|}}
     <li>
@@ -28,4 +32,4 @@
 </section>
 {{/if}}
 
-<script src="/javascript/add-blog.js"></script>
+{{!-- <script src="/javascript/add-blog.js"></script> --}}

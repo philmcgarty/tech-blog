@@ -51,6 +51,24 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+// signup screen
+router.get('/sign-up', (req, res) => {
+  if(req.session.loggedIn){
+      res.redirect('/');
+      return;
+  }
+  res.render('sign-up');
+});
+
+// new blog screen
+router.get('/new-blog', (req, res) => {
+  if(req.session.loggedIn){
+      res.render('new-blog');
+      return;
+  }
+  res.render('login');
+});
+
 router.get('/blog/:id', (req, res) => {
     Blog.findOne({
       where: {

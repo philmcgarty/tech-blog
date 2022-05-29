@@ -1,4 +1,5 @@
-{{> blog-info blog }}
+{{> full-blog blog }}
+
 {{#if loggedIn}}
 <form class="comment-form">
   <div>
@@ -6,7 +7,7 @@
   </div>
 
   <div>
-    <button type="submit">add comment</button>
+    <button type="submit" class="btn">Add Comment</button>
   </div>
 </form>
 {{/if}}
@@ -16,12 +17,14 @@
 
 <div class="comments">
   {{#each blog.comments}}
-  <section class="comment">
-    <div class="meta">
-      by {{user.username}} on {{format_date created_at}}
+  <section class="card">
+    <div class="card-header">
+      
     </div>
-    <div class="text">
+    <div class="card-body">
       {{comment_text}}
+      <br>
+      - {{user.username}} on {{format_date created_at}}
     </div>
   </section>
   {{/each}}

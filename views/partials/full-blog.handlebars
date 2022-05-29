@@ -1,0 +1,14 @@
+<article class="blog">
+    {{!-- <a href="/blog/{{id}}"> --}}
+    <section class="card">
+        <div class="card-header">
+            <span>{{title}}</span>
+            <span>Posted by {{user.username}} on {{format_date created_at}}</span>
+        </div>        
+    
+        <div class="card-body">
+        <span>{{article}}</span>
+        </div>
+    </section>
+    {{!-- </a> --}}
+</article>
