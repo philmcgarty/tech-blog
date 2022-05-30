@@ -69,6 +69,14 @@ textarea {
     margin-top: 20px;
 }
 
+.new-post-btn {
+    color: var(--primary);
+    background-color: var(--dark);
+    padding: 1.5%;
+}
+
+
+
 .btn {
     font-size: 1.3rem;
     text-decoration: none;
