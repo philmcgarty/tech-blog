@@ -1,8 +1,7 @@
 const router = require('express').Router();
 const { User, Blog, Comment } = require('../../models');
 const sequelize = require('../../config/connection');
-//const withAuth = require('../utils/auth');
-
+//const withAuth = require('../utils/auth'); - had issues, so not using this yet
 
 // get all blogs
 router.get('/', (req, res) => {
@@ -36,7 +35,7 @@ router.get('/', (req, res) => {
         });
 });
 
-// get 1 blog
+// fetch a single blog
 router.get('/:id', (req, res) => {
     Blog.findOne({
         where: {

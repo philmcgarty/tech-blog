@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User, Blog, Comment } = require('../../models');
-//const withAuth = require('../../utils/auth');
+//const withAuth = require('../../utils/auth'); - ran into issue with this so not using for now
 
 // get all
 router.get('/', (req, res) => {
@@ -26,7 +26,6 @@ router.get('/:id', (req, res) => {
         model: Blog,
         attributes: ['id', 'title', 'article', 'created_at']
       },
-      // include the Comment model here:
       {
         model: Comment,
         attributes: ['id', 'comment_text', 'created_at'],
@@ -92,10 +91,10 @@ router.post('/login', (req, res) => {
       return;
     }
 
-    req.session.save(() => {
-      
+    req.session.save(() => {    
       req.session.user_id = dbUserData.id;
       req.session.username = dbUserData.username;
+      // allows access to more of the site now logged in
       req.session.loggedIn = true;
 
       res.json({ user: dbUserData, message: 'You are now logged in!' });
@@ -103,6 +102,7 @@ router.post('/login', (req, res) => {
   });
 });
 
+// ends session
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn){
     req.session.destroy(()=>{
@@ -114,8 +114,7 @@ router.post('/logout', (req, res) => {
 });
 
 
-
-// delete user
+// delete user - not neccesary for now, but in future build
 router.delete('/:id', (req, res) => {
   User.destroy({
     where: {

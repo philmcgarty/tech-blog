@@ -1,6 +1,7 @@
+{{!-- add new blog page --}}
 <section>
   <h2>Create New Blog</h2>
-
+  {{!-- form input blog title and blog content --}}
   <form class="new-blog-form">
     <div>
       <label for="blog-title">Title</label>
@@ -9,11 +10,11 @@
     </div>
     <div>
       <p>Content</p>
-      {{!-- <label for="blog-article">Content</label> --}}
       <textarea name="blog-article"></textarea>
     </div>
     <button type="submit" class="btn">Create</button>
   </form>
 </section>
 
+{{!-- initialize js --}}
 <script src="/javascript/add-blog.js"></script>

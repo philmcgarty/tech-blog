@@ -1,23 +1,9 @@
-{{!-- <section>
-  <h2>Create New Blog</h2>
-
-  <form class="new-blog-form">
-    <div>
-      <label for="blog-title">Title</label>
-      <input type="text" id="blog-title" name="blog-title" />
-    </div>
-    <div>
-      <label for="blog-article">Content</label>
-      <input id="blog-article" name="blog-article" />
-    </div>
-    <button type="submit" class="btn">Create</button>
-  </form>
-</section> --}}
-
+{{!-- dashboard views, with new blog button and list of user's blogs --}}
+{{!-- links to new blog page --}}
 <div>
   <a href="/new-blog" class="new-post-btn">+ New Post</a>
 </div>
-
+{{!-- displays user's blogs --}}
 {{#if blogs.length}}
 <section>
   <h2 class="blog-title">Your Blogs</h2>
@@ -25,11 +11,8 @@
     {{#each blogs as |blog|}}
     <li>
       {{> blog-info blog}}
-      {{!-- <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a> --}}
     </li>
     {{/each}}
   </ol>
 </section>
 {{/if}}
-
-{{!-- <script src="/javascript/add-blog.js"></script> --}}

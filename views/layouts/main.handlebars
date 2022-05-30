@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+{{!-- main handlebars html setup --}}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
 <body>
     <div class="wrapper">
         <header class="hero">
+            {{!-- navbar with conditionals to show dashboard & logout, or just login --}}
             <nav>
                 <a href="/">Home</a>
                 {{#if loggedIn}}
@@ -20,6 +22,7 @@
                     <a href="/login">Login</a>
                 {{/if}}
             </nav>
+            {{!-- heading --}}
             <a href="/">
                 <h1 class="app-title">The Tech Blog</h1>
             </a>

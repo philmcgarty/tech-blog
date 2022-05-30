@@ -1,3 +1,4 @@
+// model for blogs
 const { Model, DataTypes} = require('sequelize');
 const sequelize = require('../config/connection');
 
@@ -19,6 +20,7 @@ Blog.init(
             type: DataTypes.STRING,
             allowNull: false
         },
+        // links to user table
         user_id: {
             type: DataTypes.INTEGER,
             references: {

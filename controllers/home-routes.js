@@ -69,6 +69,7 @@ router.get('/new-blog', (req, res) => {
   res.render('login');
 });
 
+// fetch single blog
 router.get('/blog/:id', (req, res) => {
     Blog.findOne({
       where: {
@@ -100,11 +101,8 @@ router.get('/blog/:id', (req, res) => {
           res.status(404).json({ message: 'No blog found with this id' });
           return;
         }
-  
-        // serialize the data
         const blog = dbBlogData.get({ plain: true });
   
-        // pass data to template
         res.render('single-blog', { 
             blog,
             loggedIn: req.session.loggedIn

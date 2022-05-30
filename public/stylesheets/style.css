@@ -1,3 +1,5 @@
+/* This code is taken from the module 6 'Git it Done' project with modifications */
+
 :root {
     --primary: #ccdad1;
     --secondary: #9caea9;
@@ -74,8 +76,6 @@ textarea {
     background-color: var(--dark);
     padding: 1.5%;
 }
-
-
 
 .btn {
     font-size: 1.3rem;

@@ -1,3 +1,4 @@
+// event handler for adding new comment
 async function commentFormHandler(event) {
     event.preventDefault();
   
@@ -6,7 +7,7 @@ async function commentFormHandler(event) {
     const blog_id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
-  
+    // button only responds if comment field has content
     if (comment_text) {
         const response = await fetch('/api/comments', {
           method: 'POST',

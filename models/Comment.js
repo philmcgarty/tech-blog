@@ -1,3 +1,4 @@
+// model for user's comments
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
@@ -22,6 +23,7 @@ Comment.init(
             key: 'id'
         }
     },
+    // links to user table
     blog_id: {
         type: DataTypes.INTEGER,
         references: {
